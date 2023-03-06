@@ -39,7 +39,7 @@ def on_request(ch, method, props, body):
 
 
 channel.basic_qos(prefetch_count=1)
-channel.basic_consume(queue='file_search', on_message_callback=on_request)
+channel.basic_consume(queue=rmq_queue, on_message_callback=on_request)
 
 
 print("Esperando por mensajes...")
