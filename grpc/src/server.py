@@ -19,6 +19,7 @@ def serve():
     filelisting_pb2_grpc.add_FileListingServiceServicer_to_server(FileListingServicer(), server)
     server.add_insecure_port("[::]:50051")
     server.start()
+    print("Esperando por mensajes...")
     server.wait_for_termination()
 
 if __name__ == "__main__":
