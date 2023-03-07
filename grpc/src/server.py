@@ -5,12 +5,16 @@ import os
 import filelisting_pb2
 import filelisting_pb2_grpc
 
+current_dir = os.path.abspath(os.curdir)
+dir_path = os.path.abspath(os.path.join(current_dir, "dir"))
+
 class FileListingServicer(filelisting_pb2_grpc.FileListingServiceServicer):
     def ListFiles(self, request, context):
         file_list = []
-        for filename in os.listdir("."):
-            if os.path.isfile(filename):
-                file_size = os.path.getsize(filename)
+        for filename in os.listdir(dir_path):
+            files = dir_path+'/'+filename
+            if os.path.isfile(files):
+                file_size = os.path.getsize(files)
                 file_list.append(filelisting_pb2.File(name=filename, size=file_size))
         return filelisting_pb2.FileList(files=file_list)
 

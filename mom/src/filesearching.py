@@ -8,16 +8,21 @@ rmq_user = "guest"
 rmq_password = "guest"
 rmq_queue = "search_file_queue"
 
-#rmq_credentials = pika.PlainCredentials(rmq_user, rmq_password)
-#connection = pika.BlockingConnection(pika.ConnectionParameters(host=rmq_host, port=rmq_port, virtual_host=rmq_vhost, credentials=rmq_credentials))
-connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
+rmq_credentials = pika.PlainCredentials(rmq_user, rmq_password)
+connection = pika.BlockingConnection(pika.ConnectionParameters(host=rmq_host, port=rmq_port, virtual_host=rmq_vhost, credentials=rmq_credentials))
+#connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
 channel = connection.channel()
 
 channel.queue_declare(queue=rmq_queue)
 
+current_dir = os.path.abspath(os.curdir)
+dir_path = os.path.abspath(os.path.join(current_dir, "dir"))
+
 def search_files(text):
-    for files in os.walk('/path/to/directory'):
+    for files in os.walk(dir_path):
+        print(files)
         for file in files:
+            print(file)
             if text in file:
                 return f"El archivo {text} ha sido hallado."
     return f"No se ha hallado el archivo {text}."
