@@ -16,11 +16,11 @@ channel = connection.channel()
 
 channel.queue_declare(queue=rmq_queue)
 
-current_dir = os.path.abspath(os.curdir)
-dir_path = os.path.abspath(os.path.join(current_dir, "dir"))
+#current_dir = os.path.abspath(os.curdir)
+#dir_path = os.path.abspath(os.path.join(current_dir, "dir"))
 
 def search_files(text):
-    for files in os.walk(dir_path):
+    for files in os.walk(dir):
         for file in files:
             if text in file:
                 return f"El archivo {text} ha sido hallado."
