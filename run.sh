@@ -1,8 +1,6 @@
 #!/bin/bash
-python3 ./rpc/worker.py & 
+python3 ./mom/src/filesearching.py & 
 
-python3 ./mom/worker1/worker1.py & 
+python3 ./grpc/src/server.py & 
 
-python3 ./mom/worker2/worker2.py &
-
-python3 ./gateWay/apiGateWay.py  
+python3 ./gateway/api_gateway.py  
