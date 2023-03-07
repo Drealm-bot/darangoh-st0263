@@ -16,15 +16,12 @@ channel = connection.channel()
 
 channel.queue_declare(queue=rmq_queue)
 
-#current_dir = os.path.abspath(os.curdir)
-#dir_path = os.path.abspath(os.path.join(current_dir, "dir"))
+current_dir = os.path.abspath(os.curdir)
+dir_path = os.path.abspath(os.path.join(current_dir, "dir"))
 
 def search_files(text):
-    for files in os.walk(dir):
-        print(files)
+    for files in os.walk(dir_path):
         for file in files:
-            print(file)
-            print(text)
             if text in file:
                 return f"El archivo {text} ha sido hallado."
     return f"No se ha hallado el archivo {text}."
@@ -35,15 +32,10 @@ def on_request(ch, method, props, body):
 
     
     results = search_files(text)
-    print(results)
-
-    
-    response = ','.join(results)
-    print(response)
     ch.basic_publish(exchange='',
                      routing_key=props.reply_to,
                      properties=pika.BasicProperties(correlation_id = props.correlation_id),
-                     body=response)
+                     body=results)
     ch.basic_ack(delivery_tag=method.delivery_tag)
 
 
