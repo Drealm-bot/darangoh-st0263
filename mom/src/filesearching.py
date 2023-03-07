@@ -35,9 +35,11 @@ def on_request(ch, method, props, body):
 
     
     results = search_files(text)
+    print(results)
 
     
     response = ','.join(results)
+    print(response)
     ch.basic_publish(exchange='',
                      routing_key=props.reply_to,
                      properties=pika.BasicProperties(correlation_id = props.correlation_id),
