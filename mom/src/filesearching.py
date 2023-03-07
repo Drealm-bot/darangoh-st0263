@@ -11,13 +11,9 @@ dir = "/home/ubuntu/darangoh-st0263/dir"
 
 rmq_credentials = pika.PlainCredentials(rmq_user, rmq_password)
 connection = pika.BlockingConnection(pika.ConnectionParameters(host=rmq_host, port=rmq_port, virtual_host=rmq_vhost, credentials=rmq_credentials))
-#connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
 channel = connection.channel()
 
 channel.queue_declare(queue=rmq_queue)
-
-#current_dir = os.path.abspath(os.curdir)
-#dir_path = os.path.abspath(os.path.join(current_dir, "dir"))
 
 def search_files(text):
     for files in os.walk(dir):

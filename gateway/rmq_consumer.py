@@ -26,7 +26,6 @@ class RMQConsumer:
             self.response = body.decode('utf-8')
     
     def call(self, text):
-        print(text)
         self.response = None
         self.corr_id = str(uuid.uuid4())
         self.channel.basic_publish(

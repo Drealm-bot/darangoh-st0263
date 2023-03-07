@@ -6,8 +6,6 @@ import filelisting_pb2
 import filelisting_pb2_grpc
 
 dir = "/home/ubuntu/darangoh-st0263/dir"
-#current_dir = os.path.abspath(os.curdir)
-#dir_path = os.path.abspath(os.path.join(current_dir, "dir"))
 
 class FileListingServicer(filelisting_pb2_grpc.FileListingServiceServicer):
     def ListFiles(self, request, context):

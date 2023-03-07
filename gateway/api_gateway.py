@@ -7,7 +7,7 @@ consumer = RMQConsumer()
 
 @app.route('/search', methods=['GET'])
 def search_files():
-    search_text = request.args.get('text')
+    search_text = request.args.get('query')
     results = consumer.call(search_text)
     return jsonify({'results': results})
 
