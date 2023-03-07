@@ -24,6 +24,7 @@ def search_files(text):
         print(files)
         for file in files:
             print(file)
+            print(text)
             if text in file:
                 return f"El archivo {text} ha sido hallado."
     return f"No se ha hallado el archivo {text}."
