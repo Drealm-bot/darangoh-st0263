@@ -1,100 +1,90 @@
 # info de la materia: ST0263
-#
 # Estudiante(s): Daniel Arango Hoyos, darangoh@eafit.edu.co
-#
 # Profesor: Edwin Nelson Montoya Munera, emontoya@eafit.edu.co
+# Laboratorio 5: Big Data
 #
-# Implementación Middleware: RPC y MoM
+# Lab 5.1-aws-emr
 #
-# 1. breve descripción de la actividad
+Se crea el cluster en EMR y se le configuran los parámetros necesarios:
+![Captura desde 2023-05-10 11-12-16](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/e2495588-01ec-4f01-afcd-11935a0684e3)
+
+![Captura desde 2023-05-10 11-12-41](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/44762a8e-7cdb-4032-b2ed-a288396a0de5)
+
+![Captura desde 2023-05-10 11-13-19](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/e71d9087-2183-4417-bfad-b705e17a9e4d)
+
+![Captura desde 2023-05-10 11-14-20](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/ce8cb232-2926-4077-a2cb-75e40a4080b6)
+
+![Captura desde 2023-05-10 11-15-16](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/5dcad738-e674-435e-b5ac-947a512c9fbc)
+
+![Captura desde 2023-05-10 11-17-04](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/cb2be5e2-a4c2-44a5-9140-701aaad53b3e)
+
+Una vez todos los parámetros configurados, hay que esperar entre 20-25 minutos a que se inicialice el cluster:
+![Captura desde 2023-05-10 12-03-44](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/2a139352-1ddd-457b-a1d7-b2b128dbf312)
+
+Ya cuando se haya inicializado el cluster, se procederá a modificar los puertos de acceso público y las reglas de seguridad para permitir el funcionamiento de las siguientes aplicaciones (HDFS Name Node, Hue, JupyterHub, Zeppelin):
+![image](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/d846ce8f-46c2-4301-962d-aeba2ab90019)
+
+Y también el puerto 22 para permitir el control de la instancia principal mediante SSH:
+![Captura desde 2023-05-10 23-38-34](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/8443a666-b4f0-4d48-bcce-03c92de952a6)
+![Captura desde 2023-05-10 23-39-46](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/05333221-863b-4d3c-a1ae-48c2051e500a)
+![Captura desde 2023-05-10 23-39-52](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/ba457326-7e8c-4b92-9bb9-d46f8022b3c0)
+
+Ya abiertos dichos puertos, se procede a verificar el acceso a las aplicaciones mencionadas:
+
+Hue:
+![Captura desde 2023-05-10 21-15-54](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/3f74e0d4-be34-4d59-91d8-807eaf7b8735)
+(En Hue nos registramos con el username de hadoop).
+
+![Captura desde 2023-05-10 21-20-24](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/4cf5e495-c040-4040-8573-b45d15295c3c)
+
+JupyterHub:
+
+![Captura desde 2023-05-10 21-19-51](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/39550655-49d1-47d6-9f6a-24ce9822c6e1)
+(en jupyterhub el usuario para ingresar es jovyan y la contraseña es jupyter).
+
+![Captura desde 2023-05-10 21-20-16](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/e0611bd3-4dee-40ab-83fb-3055bed78456)
+
+![Captura desde 2023-05-10 21-24-28](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/86e70d3d-4cf9-42b6-b8ee-9bf0beddfcbf)
+(Se hace un script para iniciar Spark).
+
+![Captura desde 2023-05-10 21-28-24](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/54516615-c021-4d96-9d75-9422f59fc483)
+
+Zeppelin:
+
+![Captura desde 2023-05-10 21-30-49](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/f608844a-c918-4cf0-8792-d884dca3737b)
+
+Y luego de verificar que se puede acceder a todas las aplicaciones necesarias procedemos a ingresar a la consola de la instancia principal:
+
+![Captura desde 2023-05-10 21-17-45](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/91a2092d-d9a0-4d8a-837f-992abea02bc0)
+
+![Captura desde 2023-05-10 21-17-59](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/21d99f1a-a901-4f47-8e2a-fd3c1c3b086b)
+
+# Lab 5.2-hdfs-s3
 #
-La finalidad de este reto es la de implementar dos middlewares, uno RPC y otro MoM, los cuales, a través de un API Gateway, proveerán dos microservicios bastante sencillos a los consumidores.
-## 1.1. Que aspectos cumplió o desarrolló de la actividad propuesta por el profesor (requerimientos funcionales y no funcionales)
--Se implementaron los middlewares RPC y MoM.
--Se logró comunicar a los microservicios desde una API gateway a través de estos Middlewares.
--Se implementaron scripts para la instalación de dependencias y otro para la ejecución del proyecto.
--Se desarrolló cierto grado de tolerancia a errores en el microservicio de búsquedas.
+Para este laboratorio empezamos creando un Bucket con S3 para poder almacenar los datasets que utilizaremos:
 
-## 1.2. Que aspectos NO cumplió o desarrolló de la actividad propuesta por el profesor (requerimientos funcionales y no funcionales)
--Balanceador de cargas o roundrobin.
--Que el proyecto se ejecute cuando se inicie la máquina.
+![Captura desde 2023-05-10 23-28-58](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/a8ccbb47-971f-4099-9cf5-0eafcc78f5b7)
 
-# 2. información general de diseño de alto nivel, arquitectura, patrones, mejores prácticas utilizadas.
+Y también tendremos que configurar dentro de la terminal conectada a la instancia principal el puerto que se conecta al hue para permitir que este último pueda tener constancia de los archivos que se van almacenando en el cluster, por lo que se accede al archivo de configuración de Hue `sudo nano /etc/hue/conf.empty/hue.ini` y buscamos 14000:
 
-![image](https://user-images.githubusercontent.com/61467004/223319533-e2f1eaf3-3ffe-4dbb-93d4-90c0e92f1ce0.png)
+![Captura desde 2023-05-10 23-15-15](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/fee0c9b6-12fd-4979-9577-1d6718cee6bb)
+(por defecto está el 14000 pero en la imagen ya está cambiado al 9870, que es por el que escucha la aplicación HDFS Name Node)
 
-# 3. Descripción del ambiente de desarrollo y técnico: lenguaje de programación, librerias, paquetes, etc, con sus numeros de versiones.
+Luego de realizar este cambio, procedemos a reiniciar el Hue con el comando `sudo systemctl restart hue.service`.
 
-## como se compila y ejecuta.
+Con esto ya configurado, continuamos importando los datasets desde el directorio s3 `s3://st0263darangoh/datasets`:
 
--Se abre el puerto 5000 en las reglas de seguridad de AWS.
--Se realiza un git clone https://github.com/Drealm-bot/darangoh-st0263
--Se dirige hacia el directorio darangoh-st0263 (cd darangoh-st0263/)
--Se ejecuta el script de install.sh (sudo bash install.sh)
--Se ejecuta el script de run.sh (sudo bash run.sh)
--Se dirige hacia la IP-publica:5000
--Se comprueba los archivos disponibles (IP-publica:5000/files)
--Se buscan los archivos deseados (IP-publica:5000/search?query=nombredelarchivo)
+![Captura desde 2023-05-10 22-49-57](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/2824a5cd-83f1-46d8-9d6e-91740b53831f)
+![image](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/fff65f63-be79-48b2-98a2-51e786e34e7f)
 
-## detalles del desarrollo.
+Y verificamos en Hue:
 
-Se corre en ubuntu.
+![Captura desde 2023-05-10 23-29-51](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/4020fb55-7843-4360-9cd4-d1f7cd36e7d8)
 
-## detalles técnicos
+Luego, procedemos a importar los datasets locales a un nuevo directorio s3 nombrado `s3://st0263darangoh/darangoh/datasets`:
 
-- Ubuntu 22.04
-- python 3.10.6.
-- Flask 2.2.3
-- grpcio 1.51.3
-- grpc-tools 1.51.3
-- pika 1.3.1
+![Captura desde 2023-05-11 00-02-34](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/8c05d73e-0ee7-43de-91b5-76d877e44cca)
 
-## descripción y como se configura los parámetros del proyecto (ej: ip, puertos, conexión a bases de datos, variables de ambiente, parámetros, etc)
+Y lo verificamos en S3: 
+![Captura desde 2023-05-10 23-28-47](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/1e54d56e-6e59-4212-9c74-4c8835b9956c)
 
-Se tiene que abrir el puerto 5000 dentro de los grupos de seguridad de AWS para que el usuario se pueda comunicar con la API Gateway.
-
-## opcional - detalles de la organización del código por carpetas o descripción de algún archivo. (ESTRUCTURA DE DIRECTORIOS Y ARCHIVOS IMPORTANTE DEL PROYECTO, comando 'tree' de linux)
-
-![image](https://user-images.githubusercontent.com/61467004/223318295-7fd6322c-45e6-4c5c-9b47-dd229a04b44a.png)
-
-## 
-## opcionalmente - si quiere mostrar resultados o pantallazos 
-
-![image](https://user-images.githubusercontent.com/61467004/223318432-4ae5a474-cb3b-4aad-8c8b-29ef118b2cb7.png)
-![image](https://user-images.githubusercontent.com/61467004/223318645-419b89ff-8a56-4656-83ea-add30866eda9.png)
-![image](https://user-images.githubusercontent.com/61467004/223318692-5dc4a99d-8ce6-439f-8596-f2a432ddd3af.png)
-
-# 4. Descripción del ambiente de EJECUCIÓN (en producción) lenguaje de programación, librerias, paquetes, etc, con sus numeros de versiones.
-
-- python 3.10.6.
-- Flask 2.2.3
-- grpcio 1.51.3
-- grpc-tools 1.51.3
-- pika 1.3.1
-
-# IP o nombres de dominio en nube o en la máquina servidor.
-
-La IP es la IP pública de la instancia EC2.
-
-## una mini guia de como un usuario utilizaría el software o la aplicación
-
--Se abre el puerto 5000 en las reglas de seguridad de AWS.
--Se realiza un git clone https://github.com/Drealm-bot/darangoh-st0263
--Se dirige hacia el directorio darangoh-st0263 (cd darangoh-st0263/)
--Se ejecuta el script de install.sh (sudo bash install.sh)
--Se ejecuta el script de run.sh (sudo bash run.sh)
--Se dirige hacia la IP-publica:5000
--Se comprueba los archivos disponibles (IP-publica:5000/files)
--Se buscan los archivos deseados (IP-publica:5000/search?query=nombredelarchivo)
-
-# 5. otra información que considere relevante para esta actividad.
-
-Eso es todo.
-
-# referencias:
-<debemos siempre reconocer los créditos de partes del código que reutilizaremos, así como referencias a youtube, o referencias bibliográficas utilizadas para desarrollar el proyecto o la actividad>
-## https://grpc.io/docs/languages/python/quickstart/
-## https://www.rabbitmq.com/getstarted.html
-## https://flask.palletsprojects.com/en/2.2.x/quickstart/
-
-#### versión README.md -> 1.0 (2022-agosto)
