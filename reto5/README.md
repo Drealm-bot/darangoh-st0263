@@ -90,32 +90,41 @@ Y lo verificamos en S3:
 
 # Lab 5.3-spark
 
-#__Parte 1__
+#Parte 1
+
 Scripts:
 https://github.com/Drealm-bot/darangoh-st0263/blob/main/reto5/MrScripts/AvgSalary.py
 https://github.com/Drealm-bot/darangoh-st0263/blob/main/reto5/MrScripts/Movies.py
 https://github.com/Drealm-bot/darangoh-st0263/blob/main/reto5/MrScripts/Stocks.py
 
-#__Parte 2__
+#Parte 2
+
 Se conecta al nodo master y se inicializa spark para ejecutar los siguientes comandos:
+
 ![Captura desde 2023-05-18 19-38-28](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/1aa3dbd8-1484-4707-8889-e6efd93d7db0)
 
 Resultados y se guardan en el hdfs:
+
 ![Captura desde 2023-05-18 19-38-49](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/ece12a54-e4a7-4607-be0d-31ed82d99899)
 
 Se realiza lo mismo pero utilizando los datasets ubicados en el bucket s3://st0263darangoh/ y almacenando los resultados en s3://st0263darangoh/darangoh:
+
 ![image](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/ba999e92-bcaf-4368-b77f-c74666bb7369)
 
 Ahora se procede a realizar la misma operación pero esta vez desde Jupyter:
+
 ![Captura desde 2023-05-18 19-56-55](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/127df810-2dbf-42b9-a947-c5e3bce054d6)
 
 Y se guarda en el bucket s3 como el ejemplo ejecutado en el nodo master del emr:
+
 ![Captura desde 2023-05-18 19-57-06](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/151d38a8-0c3f-44c0-9173-efda7f9c1368)
 
 Y se ve que se almacenó en el bucket como el ejemplo pasado:
+
 ![image](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/c078dc6a-ef96-4069-a5ac-2ce4da850cf6)
 
 #Replicación del notebook en Jupyter
+
 ![Captura desde 2023-05-18 20-22-55](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/29f7071c-bc84-4c0d-8678-f12932d0e1a7)
 ![Captura desde 2023-05-18 20-23-05](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/5204250a-0465-4f82-a114-c90d534e87db)
 
