@@ -90,13 +90,13 @@ Y lo verificamos en S3:
 
 # Lab 5.3-spark
 
-##__Parte 1__
+#__Parte 1__
 Scripts:
 https://github.com/Drealm-bot/darangoh-st0263/blob/main/reto5/MrScripts/AvgSalary.py
 https://github.com/Drealm-bot/darangoh-st0263/blob/main/reto5/MrScripts/Movies.py
 https://github.com/Drealm-bot/darangoh-st0263/blob/main/reto5/MrScripts/Stocks.py
 
-##__Parte 2__
+#__Parte 2__
 Se conecta al nodo master y se inicializa spark para ejecutar los siguientes comandos:
 ![Captura desde 2023-05-18 19-38-28](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/1aa3dbd8-1484-4707-8889-e6efd93d7db0)
 
@@ -115,7 +115,7 @@ Y se guarda en el bucket s3 como el ejemplo ejecutado en el nodo master del emr:
 Y se ve que se almacenó en el bucket como el ejemplo pasado:
 ![image](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/c078dc6a-ef96-4069-a5ac-2ce4da850cf6)
 
-##Replicación del notebook en Jupyter
+#Replicación del notebook en Jupyter
 ![Captura desde 2023-05-18 20-22-55](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/29f7071c-bc84-4c0d-8678-f12932d0e1a7)
 ![Captura desde 2023-05-18 20-23-05](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/5204250a-0465-4f82-a114-c90d534e87db)
 
