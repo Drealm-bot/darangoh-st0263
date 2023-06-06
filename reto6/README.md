@@ -1,7 +1,7 @@
-# info de la materia: ST0263
-# Estudiante(s): Daniel Arango Hoyos, darangoh@eafit.edu.co
-# Profesor: Edwin Nelson Montoya Munera, emontoya@eafit.edu.co
 # Laboratorio 6: Motores de búsqueda SQL Big Data
+## info de la materia: ST0263
+## Estudiante(s): Daniel Arango Hoyos, darangoh@eafit.edu.co
+## Profesor: Edwin Nelson Montoya Munera, emontoya@eafit.edu.co
 #
 # Lab 6.1.1-Hive
 #
