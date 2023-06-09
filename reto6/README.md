@@ -80,3 +80,23 @@
 ![Captura desde 2023-06-05 21-46-01](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/4fa341ff-5b14-4171-a12e-9250082a1ace)
 
 Al crear el cluster el mismo se me borra a los segundos, y no puse saber por qué.
+
+# Lab 6.2-pyspark
+
+## Carga de archivos
+
+![Captura desde 2023-06-08 20-47-36](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/fc53ddca-d0b3-4509-86a2-0e97f4da480e)
+
+![Captura desde 2023-06-09 02-26-12](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/c8c8a2d9-82cd-4e55-8f77-2c41a35faf34)
+
+## Notebooks desarrollados
+
+En Jupyter: https://github.com/Drealm-bot/darangoh-st0263/blob/main/reto6/Covid19jupyter.ipynb
+
+En Colab: https://github.com/Drealm-bot/darangoh-st0263/blob/main/reto6/Covid19colab.ipynb
+
+## Resultados
+
+![Captura desde 2023-06-08 22-00-39](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/38cb441c-b1d7-4593-8c7e-09cd4928d08d)
+
+![Captura desde 2023-06-08 22-11-58](https://github.com/Drealm-bot/darangoh-st0263/assets/61467004/5169a294-83ae-47ef-93ea-42d730d6da8b)
